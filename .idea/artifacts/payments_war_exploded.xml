@@ -7,9 +7,13 @@
           <element id="module-output" name="payments" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.10" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.10" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.10" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.10" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.10" />
+          <element id="library" level="project" name="Maven: com.google.zxing:core:3.3.0" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.1.2" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.37" />
           <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.0" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />

@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.alibaba.fastjson.JSON;
 
 @RunWith(SpringJUnit4ClassRunner.class)		//表示继承了SpringJUnit4ClassRunner类
-@ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
+@ContextConfiguration(locations = {"classpath:spring-config/spring-mybatis.xml"})
 
 public class TestMyBatis {
     private static Logger logger = Logger.getLogger(TestMyBatis.class);
@@ -26,7 +26,7 @@ public class TestMyBatis {
 
 	@Before
 	public void before() {
-		ac = new ClassPathXmlApplicationContext("classpath:spring-mybatis.xml");
+		ac = new ClassPathXmlApplicationContext("classpath:spring-config/spring-mybatis.xml");
 		userService = (IUserService) ac.getBean("userService");
 	}
 
