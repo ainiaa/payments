@@ -90,5 +90,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-io:commons-io:2.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-codec:commons-codec:1.10" level="project" />
     <orderEntry type="library" name="Maven: com.google.zxing:core:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.23" level="project" />
   </component>
 </module>

@@ -36,6 +36,7 @@
         <zxing.version>3.3.0</zxing.version>
         <aspectjrt.version>1.8.10</aspectjrt.version>
         <aspectjweaver.version>1.8.10</aspectjweaver.version>
+        <freemarker.version>2.3.23</freemarker.version>
         <dao.target.dir>src/main/java</dao.target.dir>
     </properties>
 
@@ -244,6 +245,13 @@
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
             <version>${zxing.version}</version>
+        </dependency>
+
+        <!-- freemarker依赖 -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>${freemarker.version}</version>
         </dependency>
     </dependencies>
 
