@@ -6,15 +6,7 @@
         <element id="directory" name="classes">
           <element id="module-output" name="payments" />
         </element>
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.10" />
-          <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.10" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.10" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.10" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.10" />
-          <element id="library" level="project" name="Maven: com.google.zxing:core:3.3.0" />
-          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.23" />
-        </element>
+        <element id="directory" name="lib" />
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/payments/META-INF/MANIFEST.MF" />
