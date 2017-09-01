@@ -38,6 +38,7 @@
         <aspectjweaver.version>1.8.10</aspectjweaver.version>
         <freemarker.version>2.3.23</freemarker.version>
         <dao.target.dir>src/main/java</dao.target.dir>
+        <basedir.value>D:/www/GitHub/payments/src/main/</basedir.value>
     </properties>
 
     <dependencies>
@@ -232,9 +233,38 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>user-release</id>
+            <name>root</name>
+            <url>http://localhost:8080/nexus/content/repositories/user-release/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>user-snapshot</id>
+            <name>root</name>
+            <url>http://localhost:8080/nexus/content/repositories/user-snapshot/</url>
+        </snapshotRepository>
+
+    </distributionManagement>
+
     <build>
         <finalName>payments</finalName>
         <plugins>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir.value}/webapp/WEB-INF/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
@@ -243,24 +273,75 @@
                     <verbose>true</verbose>
                     <overwrite>true</overwrite>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>${mysql.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.mybatis.generator</groupId>
-                        <artifactId>mybatis-generator-maven-plugin</artifactId>
-                        <version>${mybatisgen.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.mybatis.generator</groupId>
-                        <artifactId>mybatis-generator-core</artifactId>
-                        <version>${mybatisgen.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.5</version>
+                <configuration>
+                    <reportPlugins>
+                        <reportPlugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-project-info-reports-plugin</artifactId>
+                        </reportPlugin>
+                    </reportPlugins>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <packagingExcludes>
+                        **/spy.properties,scripts/ext4/docs/**,scripts/ext4/examples/**,scripts/ext4/pkgs/**,scripts/ext4/src/**,scripts/ext4/welcome/**,
+                        scripts/jquery-fancybox/example/**,
+                        scripts/zTree/demo/**,
+                        logs/**
+                    </packagingExcludes>
+
+                    <warSourceExcludes>
+                        scripts/ext4/docs/**,scripts/ext4/examples/**,scripts/ext4/pkgs/**,scripts/ext4/src/**,scripts/ext4/welcome/**,
+                        scripts/poshytip/demo/**,
+                        scripts/zTree/demo/**,
+                        logs/**
+                    </warSourceExcludes>
+                    <warSourceDirectory>webapp</warSourceDirectory>
+                    <workDirectory>${project.build.directory}/work</workDirectory>
+                    <useCache>false</useCache>
+                    <archive>
+                        <addMavenDescriptor>true</addMavenDescriptor>
+                    </archive>
+                    <webXml>${basedir.value}/webapp/WEB-INF/web.xml</webXml>
+                    <warName>${project.build.finalName}</warName>
+                    <webResources>
+                        <resource>
+                            <directory>${basedir.value}/webapp/WEB-INF</directory>
+                            <filtering>true</filtering>
+                            <targetPath>WEB-INF</targetPath>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost:8080/manager</url>
+                    <server>localhost</server>
+                    <path>/${project.build.finalName}</path>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 </project>

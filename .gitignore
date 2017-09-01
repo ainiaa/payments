@@ -1,3 +1,4 @@
 target/
 *.log
+*.class
 logs/ssm.log
