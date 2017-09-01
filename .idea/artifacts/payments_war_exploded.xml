@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="payments:war exploded">
+  <artifact type="exploded-war" build-on-make="true" name="payments:war exploded">
     <output-path>$PROJECT_DIR$/target/payments</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">

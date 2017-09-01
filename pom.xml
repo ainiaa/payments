@@ -6,7 +6,7 @@
     <packaging>war</packaging>
     <groupId>com.a91coding.payments</groupId>
     <artifactId>payments</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>0.1.3-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -38,7 +38,7 @@
         <aspectjweaver.version>1.8.10</aspectjweaver.version>
         <freemarker.version>2.3.23</freemarker.version>
         <dao.target.dir>src/main/java</dao.target.dir>
-        <basedir.value>D:/www/GitHub/payments/src/main/</basedir.value>
+        <basedir.value>${project.basedir}/src/main/</basedir.value> <!-- if this dir is wrong maybe Artifact is deployed successfully but brower found 404 -->
     </properties>
 
     <dependencies>

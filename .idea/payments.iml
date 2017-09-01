@@ -18,7 +18,7 @@
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset2" name="Spring Application Context (2)" removed="false">
+        <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/spring-config/spring-mvc.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/spring-config/spring-mybatis.xml</file>
         </fileset>
@@ -63,7 +63,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.alibaba:jconsole:1.8.0">
         <CLASSES>
-          <root url="jar://C:/Program Files/Java/jdk1.8.0_131/lib/jconsole.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_51/lib/jconsole.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -72,7 +72,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.alibaba:tools:1.8.0">
         <CLASSES>
-          <root url="jar://C:/Program Files/Java/jdk1.8.0_131/lib/tools.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_51/lib/tools.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
