@@ -96,9 +96,13 @@
         <!-- 自动扫描mapping.xml文件 -->
         <property name="mapperLocations">
             <list>
-                <value>classpath:/mybatis-config/mapper/*.xml</value>
+                <value>classpath:mybatis-config/mapper/*.xml</value>
             </list>
         </property>
+        <!-- 扫描 entity 包，这样在 mapper 中就可以使用简单类名，多个用 ; 隔开 -->
+        <property name="typeAliasesPackage" value="com/a91coding/payments/model"/>
+        <!-- 配置 MyBatis 全局配置文件 -->
+        <property name="configLocation" value="classpath:mybatis-config/mybatis-config.xml"/>
     </bean>
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
@@ -114,7 +118,7 @@
     </bean>
 
     <!-- 创建一个sqlSession实例，线程安全的，可以在所有DAO实例共享，原理是将sqlSession，事务与当前线程挂钩 -->
-    <bean name="sqlSessionTemplateASS" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="close">
+    <bean name="sqlSessionTemplateASS" class="org.mybatis.spring.SqlSessionTemplate" >
         <constructor-arg index="0" ref="sqlSessionFactory" />
     </bean>
 

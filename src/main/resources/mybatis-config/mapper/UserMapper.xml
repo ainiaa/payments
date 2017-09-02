@@ -1,88 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.a91coding.payments.dao.IUserDao">
-  <resultMap id="BaseResultMap" type="com.a91coding.payments.model.User">
+  <resultMap id="UserResultMap" type="com.a91coding.payments.model.User">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="status" jdbcType="TINYINT" property="status" />
   </resultMap>
-  <sql id="Base_Column_List">
-    id, user_name, password, age
+  <sql id="User_Column_List">
+    id, username, password, nickname, status
   </sql>
-  <select id="selectAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="UserResultMap">
     select
-    <include refid="Base_Column_List" />
-    from user_t
+    <include refid="User_Column_List" />
+    from t_user
+    where id = #{id,jdbcType=INTEGER}
   </select>
+    <select id="listUser" resultMap="UserResultMap">
+        select
+        <include refid="User_Column_List" />
+        from t_user
+    </select>
 
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from user_t
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from user_t
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
+    <select id="selectByUsername" parameterType="java.lang.String" resultMap="UserResultMap">
+        select
+        <include refid="User_Column_List" />
+        from t_user
+        where username = #{username,jdbcType=VARCHAR}
+    </select>
+    <!-- 根据用户 id 查询这个用户拥有的所有资源（这里的资源就代表权限） -->
+    <select id="listAllResources" resultType="Resource" parameterType="int">
+        SELECT tr.`id`,tr.`name`,tr.`permission`,tr.`url`
+        FROM `t_resource` tr
+        LEFT JOIN `t_role_resource` trr ON tr.`id` = trr.`resource_id`
+        LEFT JOIN `t_user_role` tur ON trr.`role_id` = tur.role_id
+        WHERE tur.user_id = #{uid}
+    </select>
+
+    <!-- 根据用户 id 查询用户所具有的角色字符串表示 -->
+    <select id="listRoleSnByUser" parameterType="int" resultType="string">
+        SELECT
+        tr.sn
+        FROM `t_role` tr
+        LEFT JOIN `t_user_role` tur ON tr.`id` = tur.role_id
+        LEFT JOIN `t_user` tu ON tur.`user_id` = tu.id
+        WHERE tu.`id` = #{uid}
+    </select>
+
+    <!-- 根据用户 id 查询用户所具有的角色对象表示 -->
+    <select id="listUserRole" parameterType="int" resultType="Role">
+        SELECT
+        tr.`id`,
+        tr.`name`,
+        tr.`sn`
+        FROM `t_role` tr
+        LEFT JOIN `t_user_role` tur ON tr.`id` = tur.role_id
+        LEFT JOIN `t_user` tu ON tur.`user_id` = tu.id
+        WHERE tu.`id` = #{uid}
+    </select>
   <insert id="insert" parameterType="com.a91coding.payments.model.User">
-    insert into user_t (id, user_name, password, 
-      age)
-    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{age,jdbcType=INTEGER})
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_user (username, password, nickname, 
+      status)
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{status,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="com.a91coding.payments.model.User">
-    insert into user_t
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="userName != null">
-        user_name,
+      <if test="username != null">
+        username,
       </if>
       <if test="password != null">
         password,
       </if>
-      <if test="age != null">
-        age,
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="status != null">
+        status,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="userName != null">
-        #{userName,jdbcType=VARCHAR},
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="age != null">
-        #{age,jdbcType=INTEGER},
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.a91coding.payments.model.User">
-    update user_t
+    update t_user
     <set>
-      <if test="userName != null">
-        user_name = #{userName,jdbcType=VARCHAR},
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="age != null">
-        age = #{age,jdbcType=INTEGER},
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.a91coding.payments.model.User">
-    update user_t
-    set user_name = #{userName,jdbcType=VARCHAR},
+    update t_user
+    set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      age = #{age,jdbcType=INTEGER}
+      nickname = #{nickname,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+    <delete id="deleteByPrimaryKey" parameterType="int">
+        DELETE FROM t_user
+        where id = #{id}
+    </delete>
+    <!--  批量删除 -->
+    <delete id="batchDelete" parameterType="list">
+        DELETE FROM t_user
+        where id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="listByRole" parameterType="int" resultType="User">
+        SELECT
+        tu.id,
+        tu.username,
+        tu.`password`,
+        tu.nickname,
+        tu.`status`
+        FROM
+        t_user tu
+        LEFT JOIN t_user_role tur ON tu.id = tur.user_id
+        LEFT JOIN t_role tr ON tur.role_id = tr.id
+        WHERE tr.id =#{rid}
+    </select>
 </mapper>

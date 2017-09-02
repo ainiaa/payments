@@ -16,11 +16,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.alibaba.fastjson.JSON;
 
 @RunWith(SpringJUnit4ClassRunner.class)		//表示继承了SpringJUnit4ClassRunner类
-@ContextConfiguration(locations = {"classpath:spring-config/spring-mybatis.xml"})
+@ContextConfiguration(locations = {"classpath*:spring-config/spring-mybatis.xml"})
 
 public class TestMyBatis {
     private static Logger logger = Logger.getLogger(TestMyBatis.class);
-    	private ApplicationContext ac = null;
+    private ApplicationContext ac = null;
     @Resource
     private IUserService userService = null;
 
@@ -32,9 +32,9 @@ public class TestMyBatis {
 
     @Test
     public void test1() {
-        User user = userService.getUserById(1);
-         System.out.println(user.getUserName());
-         logger.info("值："+user.getUserName());
+        User user = userService.selectByPrimaryKey(1);
+         System.out.println(user.getUsername());
+         logger.info("值："+user.getUsername());
         logger.info(JSON.toJSONString(user));
     }
 }

@@ -3,11 +3,13 @@ package com.a91coding.payments.model;
 public class User {
     private Integer id;
 
-    private String userName;
+    private String username;
 
     private String password;
 
-    private Integer age;
+    private String nickname;
+
+    private Byte status;
 
     public Integer getId() {
         return id;
@@ -17,12 +19,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
     public String getPassword() {
@@ -33,11 +35,19 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    public Integer getAge() {
-        return age;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setNickname(String nickname) {
+        this.nickname = nickname == null ? null : nickname.trim();
+    }
+
+    public Byte getStatus() {
+        return status;
+    }
+
+    public void setStatus(Byte status) {
+        this.status = status;
     }
 }

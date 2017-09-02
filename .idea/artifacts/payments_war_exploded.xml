@@ -47,6 +47,23 @@
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
           <element id="library" level="project" name="Maven: com.google.zxing:core:3.3.0" />
           <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.23" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-core:1.4.0" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-lang:1.4.0" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-cache:1.4.0" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-crypto-hash:1.4.0" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-crypto-core:1.4.0" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-crypto-cipher:1.4.0" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-config-core:1.4.0" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-config-ogdl:1.4.0" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.3" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.2" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-event:1.4.0" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-web:1.4.0" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-spring:1.4.0" />
+          <element id="library" level="project" name="Maven: cn.joylau.code:joylau-shiro-freemarker:1.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-ehcache:1.4.0" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-core:2.6.11" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache:2.10.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">

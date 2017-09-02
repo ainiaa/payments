@@ -11,7 +11,7 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
     <mvc:annotation-driven />
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
-    <context:component-scan base-package="com.a91coding.payments.controller" />
+    <context:component-scan base-package="com.a91coding.payments.*" />
 
     <!-- 国际化资源配置 -->
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
@@ -25,7 +25,6 @@
     <mvc:resources location="/res/" mapping="/res/**"/>
     <mvc:resources location="/WEB-INF/pages/error/" mapping="/WEB-INF/pages/error/**"/>
     <mvc:resources location="/upload/" mapping="/upload/**"/>
-
 
 
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
@@ -61,18 +60,54 @@
 
     <!-- 视图配置 在list中按照配置的先后顺序 -->
     <!-- freemarker的配置 -->
-    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+    <!--<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">-->
+        <!--<property name="templateLoaderPath">-->
+            <!--<value>/WEB-INF/jsp/</value>-->
+        <!--</property>-->
+        <!--<property name="freemarkerSettings">&lt;!&ndash; 设置FreeMarker环境属性 &ndash;&gt;-->
+            <!--<props>-->
+                <!--<prop key="template_update_delay">5</prop>&lt;!&ndash;刷新模板的周期，单位为秒 &ndash;&gt;-->
+                <!--<prop key="default_encoding">UTF-8</prop>&lt;!&ndash;模板的编码格式 &ndash;&gt;-->
+                <!--<prop key="locale">UTF-8</prop>&lt;!&ndash; 本地化设置 &ndash;&gt;-->
+                <!--<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>-->
+                <!--<prop key="time_format">HH:mm:ss</prop>-->
+                <!--<prop key="number_format">#.####</prop>-->
+                <!--<prop key="boolean_format">true,false</prop>-->
+                <!--<prop key="whitespace_stripping">true</prop>-->
+                <!--<prop key="tag_syntax">auto_detect</prop>-->
+                <!--<prop key="url_escaping_charset">UTF-8</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!-- 配置shiro标签， 拓展 替代原来的freemarkerConfig-->
+    <bean id="freemarkerConfig" class="com.a91coding.payments.kit.ShiroFreemarker">
+        <!--shiro标签仅限用在该路径下的html页面，不能使用include引入 -->
         <property name="templateLoaderPath">
-            <value>/WEB-INF/jsp/</value>
+        <value>/WEB-INF/jsp/</value>
         </property>
-        <property name="freemarkerSettings"><!-- 设置FreeMarker环境属性 -->
+
+        <property name="freemarkerVariables">
+            <map>
+                <entry key="xml_escape" value-ref="fmXmlEscape" />
+            </map>
+        </property>
+
+        <property name="defaultEncoding">
+            <value>utf-8</value>
+        </property>
+
+        <property name="freemarkerSettings">
             <props>
+                <prop key="number_format">\#0.\#\#\#\#\#</prop>
+                <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+                <prop key="classic_compatible">true</prop>
+                <prop key="template_exception_handler">ignore</prop>
                 <prop key="template_update_delay">5</prop><!--刷新模板的周期，单位为秒 -->
                 <prop key="default_encoding">UTF-8</prop><!--模板的编码格式 -->
                 <prop key="locale">UTF-8</prop><!-- 本地化设置 -->
                 <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
                 <prop key="time_format">HH:mm:ss</prop>
-                <prop key="number_format">#.####</prop>
                 <prop key="boolean_format">true,false</prop>
                 <prop key="whitespace_stripping">true</prop>
                 <prop key="tag_syntax">auto_detect</prop>
@@ -80,6 +115,9 @@
             </props>
         </property>
     </bean>
+
+    <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
+
 
     <!-- 定义跳转的文件的前后缀 ，视图模式配置-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
