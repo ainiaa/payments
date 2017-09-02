@@ -1,4 +1,5 @@
 <#setting classic_compatible=true>
+<#assign ctx=request.getContextPath()>
 <html>
     <head>
         <title>用户列表</title>
@@ -28,20 +29,20 @@
                                 【<a class="status" data-id="${user.id}" data-status="${user.status}">启用</a>】
                             </td>
                             <td>
-                                <a href="${pageContext.request.contextPath}/admin/user/update/${user.id}">更新用户信息</a>
-                                <a href="${pageContext.request.contextPath}/admin/user/resources/${user.id}">查询用户权限</a>
+                                <a href="${ctx}/admin/user/update/${user.id}">更新用户信息</a>
+                                <a href="${ctx}/admin/user/resources/${user.id}">查询用户权限</a>
                             </td>
                         </tr>
                     </#list>
                 </tbody>
             </table>
             用户操作：
-            <a class="btn btn-primary" role="button" href="${pageContext.request.contextPath}/admin/user/add">添加用户</a>
+            <a class="btn btn-primary" role="button" href="${ctx}/admin/user/add">添加用户</a>
             <a class="btn btn-primary" role="button" href="#" id="deleteUserBtn" >删除用户</a>
         </div>
 
         <%-- 不要使用自结束 --%>
-        <script type="text/javascript" src="${pageContext.request.contextPath}/res/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="${ctx}/res/jquery-3.1.0.min.js"></script>
         <script type="text/javascript">
             $(function(){
                 $(".status").each(function(){
@@ -59,7 +60,7 @@
                     var user_id = oper.attr("data-id");
                     var user_status = oper.attr("data-status");
                     var update_status = (user_status == 1 ? 0: 1);
-                    $.post("${pageContext.request.contextPath}/admin/user/updateStatus",
+                    $.post("${ctx}/admin/user/updateStatus",
                             {
                                 id:user_id,
                                 status:update_status
@@ -92,7 +93,7 @@
                     // 这里也可以使用表单提交的方式删除
                     $.ajax({
                         type:"post",
-                        url:"${pageContext.request.contextPath}/admin/user/delete",
+                        url:"${ctx}/admin/user/delete",
                         dataType:"json",
                         data:{
                             userIds:checkedArray,
@@ -101,7 +102,7 @@
                         success:function (data) {
                             if(data.success){
                                 alert("数据删除成功!");
-                                location.href = "${pageContext.request.contextPath}/admin/user/list";
+                                location.href = "${ctx}/admin/user/list";
                             }else {
                                 alert(data.errorInfo);
                             }
