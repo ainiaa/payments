@@ -7,35 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edcdd6aa-e701-4d05-ac38-cddc0b3a0b39" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_5_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_2_10_4.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/payments_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/payments_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/payments.iml" afterPath="$PROJECT_DIR$/.idea/payments.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/list.jsp.bak" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/controller/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IResourceDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IResourceDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IRoleDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IRoleDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IRoleResourceDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IRoleResourceDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IUserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IUserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IUserRoleDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IUserRoleDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/filter/ResourceCheckFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/filter/ResourceCheckFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/realm/MyRealm.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/realm/MyRealm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/service/impl/ResourceService.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/service/impl/ResourceService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/service/impl/RoleService.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/service/impl/RoleService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/ehcache.xml" afterPath="$PROJECT_DIR$/src/main/resources/ehcache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-config/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-config/spring-mvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-config/spring-mybatis.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-config/spring-mybatis.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-config/spring-shiro.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-config/spring-shiro.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/unAuthorization.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/unAuthorization.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/a91coding/payments/testing/TestMyBatis.java" afterPath="$PROJECT_DIR$/src/test/java/com/a91coding/payments/testing/TestMyBatis.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/shiro.ini" afterPath="$PROJECT_DIR$/src/main/resources/shiro.ini.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/BaseCacheService.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/BaseCacheService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/UserServiceAspect.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/UserServiceAspect.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,11 +23,115 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/controller/LoginController.java">
+      <file leaf-file-name="BaseCacheService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/BaseCacheService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="44" column="35" lean-forward="true" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+            <state relative-caret-position="-1158">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServiceAspect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/UserServiceAspect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2187">
+              <caret line="125" column="31" lean-forward="true" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#873#874#0" expanded="true" />
+                <element signature="e#942#943#0" expanded="true" />
+                <element signature="e#1143#1144#0" expanded="true" />
+                <element signature="e#1190#1191#0" expanded="true" />
+                <element signature="e#1359#1360#0" expanded="true" />
+                <element signature="e#1407#1408#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-419">
+              <caret line="100" column="18" lean-forward="false" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/update.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/update.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1296">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/list.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/service/impl/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IUserDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IUserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="3" column="52" lean-forward="false" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRole.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/UserRole.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -68,7 +148,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cache:annotation-driven</find>
       <find>cache</find>
       <find>EhCacheManagerFactoryBean</find>
       <find>ehCacheManagerFactoryBean</find>
@@ -95,9 +174,10 @@
       <find>doGetAuthenticationInfo</find>
       <find>esourceCheckFilter</find>
       <find>resourceCheckFilter</find>
-      <find>unAuthorization</find>
       <find>login/login</find>
       <find>login/</find>
+      <find>unAuthorization</find>
+      <find>UserServiceAspect</find>
     </findStrings>
     <replaceStrings>
       <replace>ResourceResultMap</replace>
@@ -131,8 +211,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/logs/ssm.log" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis-config/mapper/RoleResourceMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis-config/mapper/UserRoleMapper.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/a91coding/payments/testing/UserServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/list.jsp" />
@@ -154,11 +232,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-service.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/service/impl/RoleService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IUserRoleDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/Resource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IResourceDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/Role.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/RoleResource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/UserRole.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IRoleDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IRoleResourceDao.java" />
@@ -166,8 +240,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/service/impl/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/service/impl/ResourceService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/ehcache.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/BaseCacheService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/UserServiceAspect.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-mybatis.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -182,6 +254,14 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-shiro.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/BaseCacheService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/BaseModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/Resource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/Role.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/RoleResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/UserServiceAspect.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/update.ftl" />
       </list>
     </option>
   </component>
@@ -272,6 +352,53 @@
               <item name="payments" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="payments" type="b2602c69:ProjectViewProjectNode" />
+              <item name="payments" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="payments" type="b2602c69:ProjectViewProjectNode" />
+              <item name="payments" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="payments" type="b2602c69:ProjectViewProjectNode" />
+              <item name="payments" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="payments" type="b2602c69:ProjectViewProjectNode" />
+              <item name="payments" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="payments" type="b2602c69:ProjectViewProjectNode" />
+              <item name="payments" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="payments" type="b2602c69:ProjectViewProjectNode" />
+              <item name="payments" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -290,10 +417,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\www\GitHub\payments\src\main\webapp\WEB-INF\jsp\user" />
       <recent name="E:\www\GitHub\payments\src\main\resources\spring-config" />
       <recent name="E:\www\GitHub\payments\src\main\java\com\a91coding\payments\cache" />
       <recent name="E:\www\GitHub\payments\src\main\webapp\WEB-INF\jsp" />
-      <recent name="E:\www\GitHub\payments\src\main\webapp\WEB-INF\jsp\user" />
       <recent name="E:\www\GitHub\payments\src\main\java\com\a91coding\payments\controller" />
     </key>
   </component>
@@ -539,7 +666,7 @@
       <workItem from="1504280212149" duration="2860000" />
       <workItem from="1504283228540" duration="1084000" />
       <workItem from="1504284425621" duration="19277000" />
-      <workItem from="1504362076196" duration="46509000" />
+      <workItem from="1504362076196" duration="50471000" />
     </task>
     <servers />
   </component>
@@ -576,10 +703,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69730000" />
+    <option name="totallyTimeSpent" value="73692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.503125" order="7" side_tool="true" content_ui="tabs" />
@@ -598,7 +726,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5877095" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36759776" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25586355" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -624,48 +752,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/resources.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common.jsp.bak">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/inc.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="1" lean-forward="false" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/kit/ShiroFreemarker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/list.jsp.bak">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/kit/ShiroKit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -686,14 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-216">
           <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/list.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84">
-          <caret line="104" column="54" lean-forward="false" selection-start-line="104" selection-start-column="54" selection-end-line="104" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -736,38 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/Resource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/UserRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IResourceDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -798,16 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IUserRoleDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -815,22 +851,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/RoleResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/service/impl/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,32 +915,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/BaseCacheService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/ehcache.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="47" column="17" lean-forward="false" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/UserServiceAspect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#663#664#0" expanded="true" />
-            <element signature="e#715#716#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1000,16 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -1064,7 +1053,164 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
-          <caret line="44" column="35" lean-forward="true" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+          <caret line="44" column="35" lean-forward="false" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.10.RELEASE/spring-context-4.3.10.RELEASE-sources.jar!/org/springframework/context/annotation/EnableAspectJAutoProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="112" column="36" lean-forward="true" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/io/Serializable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="168" column="7" lean-forward="false" selection-start-line="168" selection-start-column="7" selection-end-line="168" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/BaseModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#244#245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/Resource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/RoleResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <folding>
+            <marker date="1504447838245" expanded="false" signature="180:191" ph=" { " />
+            <marker date="1504447838245" expanded="false" signature="201:207" ph=" }" />
+            <marker date="1504447838245" expanded="false" signature="242:253" ph=" { " />
+            <marker date="1504447838245" expanded="false" signature="266:272" ph=" }" />
+            <marker date="1504447838245" expanded="false" signature="304:315" ph=" { " />
+            <marker date="1504447838245" expanded="false" signature="329:335" ph=" }" />
+            <marker date="1504447838245" expanded="false" signature="378:389" ph=" { " />
+            <marker date="1504447838245" expanded="false" signature="410:416" ph=" }" />
+            <marker date="1504447838245" expanded="false" signature="452:463" ph=" { " />
+            <marker date="1504447838245" expanded="false" signature="481:487" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/UserRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="52" lean-forward="false" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/dao/IUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/BaseCacheService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1158">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/service/impl/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/cache/UserServiceAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2187">
+          <caret line="125" column="31" lean-forward="true" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#1143#1144#0" expanded="true" />
+            <element signature="e#1190#1191#0" expanded="true" />
+            <element signature="e#1359#1360#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/a91coding/payments/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-419">
+          <caret line="100" column="18" lean-forward="false" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/update.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/update.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1296">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

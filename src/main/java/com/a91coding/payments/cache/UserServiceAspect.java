@@ -5,9 +5,9 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceAspect extends BaseCacheService{
     private static final Logger logger = LoggerFactory.getLogger(UserServiceAspect.class);
     /**
@@ -21,6 +21,7 @@ public class UserServiceAspect extends BaseCacheService{
     private String usernamePrefix = "username-";
 
     public UserServiceAspect(){
+        logger.debug("UserServiceAspect --- init ---- ");
         this.setCacheName("shiro-userCache");
     }
 
@@ -29,6 +30,7 @@ public class UserServiceAspect extends BaseCacheService{
      */
     @Pointcut("target(com.a91coding.payments.service.impl.UserService)")
     public void userServicePointcut(){
+        logger.debug("UserServiceAspect.userServicePointcut");
     }
 
     /**
@@ -40,13 +42,15 @@ public class UserServiceAspect extends BaseCacheService{
      */
     @Pointcut("execution(* add(..))|| execution(* update(..)) || execution(* login(..))")
     public void userPutPointcut(){
+        logger.debug("userPutPointcut");
     }
 
     /**
      * 加载和按照用户名加载的方法要缓存起来
      */
-    @Pointcut("execution(* load(..)) || execution(* loadByUsername(..))")
+    @Pointcut("execution(* selectByPrimaryKey(..)) || execution(* selectByUsername(..))")
     public void userReadPointcut(){
+        logger.debug("userReadPointcut");
     }
 
     @Pointcut(value = "execution(* delete(*)) && args(arg)",argNames = "arg")
@@ -87,14 +91,15 @@ public class UserServiceAspect extends BaseCacheService{
     @Around(value = "userServicePointcut() && userReadPointcut()")
     public Object userReadPointcut(ProceedingJoinPoint pjp) throws Throwable{
         String methodName = pjp.getSignature().getName();
+        logger.debug("userReadPointcut method:" + methodName);
         Object[] args = pjp.getArgs();
         Object arg = args.length > 0 ? args[0] : null;
         String key = null;
         boolean isId = false;
-        if(methodName.equals("load")){
+        if(methodName.equals("selectByPrimaryKey")){
             isId = true;
             key = idPrefix + arg;
-        }else if(methodName.equals("loadByUsername")){
+        }else if(methodName.equals("selectByUsername")){
             key = usernamePrefix + arg;
         }
         User user = null;

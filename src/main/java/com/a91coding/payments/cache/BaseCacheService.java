@@ -1,16 +1,12 @@
 package com.a91coding.payments.cache;
 
-import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.Cache;
 import org.springframework.cache.ehcache.EhCacheCacheManager;
 
 /**
- * Created by liwei on 16/9/21.
  * 注意:该基础缓存服务类中使用的缓存都是 Spring 框架提供的缓存
- *
  */
 
 public class BaseCacheService implements InitializingBean{
