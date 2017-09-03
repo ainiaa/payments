@@ -10,7 +10,7 @@
                 <span style="font-size: 24px;">很遗憾,您不具备访问该网页的权限。</span>
             </div>
             <button class="btn btn-default" type="button" onclick="history.go(-1)">返回上一页</button>
-            <a class="btn btn-default" href="${pageContext.request.contextPath}/login/login">请更换账号登录</a>
+            <a class="btn btn-default" href="${pageContext.request.contextPath}/login">请更换账号登录</a>
         </div>
     </body>
 </html>

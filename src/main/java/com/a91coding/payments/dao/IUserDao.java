@@ -4,9 +4,10 @@ import com.a91coding.payments.model.Resource;
 import com.a91coding.payments.model.Role;
 import com.a91coding.payments.model.User;
 import org.apache.ibatis.annotations.Param;
-
+import org.springframework.stereotype.Repository;
 import java.util.List;
 
+@Repository
 public interface IUserDao {
     int deleteByPrimaryKey(Integer id);
 

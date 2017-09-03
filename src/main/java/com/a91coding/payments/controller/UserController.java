@@ -1,14 +1,16 @@
 package com.a91coding.payments.controller;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import com.a91coding.payments.model.Role;
 import com.a91coding.payments.model.User;
 import com.a91coding.payments.service.IRoleService;
 import com.a91coding.payments.service.IUserService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,12 +22,15 @@ import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/admin/user")
+@RequiresPermissions("admin")
 public class UserController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
-    @Resource
+    @Autowired
+    @Qualifier("userService")
     private IUserService userService;
 
-    @Resource
+    @Autowired
+    @Qualifier("roleService")
     private IRoleService roleService;
 
     @RequestMapping("/showUser")

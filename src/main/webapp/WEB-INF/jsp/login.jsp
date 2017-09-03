@@ -17,7 +17,7 @@
                 <h1>用户、角色、权限管理系统</h1>
             </div>
             <hr>
-            <form class="form-horizontal" role="form" method="post" action="${pageContext.request.contextPath}/login/login">
+            <form class="form-horizontal" role="form" method="post" action="${pageContext.request.contextPath}/login">
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
                     <div class="col-sm-10">

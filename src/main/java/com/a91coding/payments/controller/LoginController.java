@@ -13,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@RequestMapping(value = "/login")
 @Controller
 public class LoginController {
 
@@ -29,19 +28,21 @@ public class LoginController {
     public String login(User user, Model model){
         String username = user.getUsername();
         String password = user.getPassword();
-        logger.info("username => " + username);
-        logger.info("password => " + password);
+        logger.info("login username => " + username);
+        logger.info("login password => " + password);
         UsernamePasswordToken token = new UsernamePasswordToken(username,password);
         Subject subject = SecurityUtils.getSubject();
         String msg = null;
         try {
             subject.login(token);
         } catch (UnknownAccountException e) {
-            e.printStackTrace();
-            msg = e.getMessage();
+            return "redirect:/unAuthorization";
+//            e.printStackTrace();
+//            msg = e.getMessage();
         } catch (IncorrectCredentialsException e){
-            e.printStackTrace();
-            msg = e.getMessage();
+            return "redirect:/unAuthorization";
+//            e.printStackTrace();
+//            msg = e.getMessage();
         }
         if(msg == null){
             return "redirect:/admin/user/list";

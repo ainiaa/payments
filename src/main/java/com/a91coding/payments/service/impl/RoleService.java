@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by Liwei on 2016/9/18.
  */
-@Service("RoleService")
+@Service("roleService")
 public class RoleService implements IRoleService {
     @Autowired
     private IRoleDao roleDao;

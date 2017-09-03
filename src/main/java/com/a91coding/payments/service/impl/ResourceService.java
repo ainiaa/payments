@@ -4,7 +4,6 @@ import com.a91coding.payments.dao.IResourceDao;
 import com.a91coding.payments.model.Resource;
 import com.a91coding.payments.service.IResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.List;
 /**
  * Created by Liwei on 2016/9/19.
  */
-@Service("ResourceService")
+@Service("resourceService")
 public class ResourceService implements IResourceService {
     @Autowired
     private IResourceDao resourceDao;

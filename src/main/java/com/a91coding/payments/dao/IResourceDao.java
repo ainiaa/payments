@@ -1,9 +1,10 @@
 package com.a91coding.payments.dao;
 
 import com.a91coding.payments.model.Resource;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface IResourceDao {
     int deleteByPrimaryKey(Integer id);
 

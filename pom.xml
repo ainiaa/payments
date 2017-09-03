@@ -41,7 +41,8 @@
         <joylau-shiro-freemarker.version>1.1.2.RELEASE</joylau-shiro-freemarker.version>
         <ehcache.version>2.10.4</ehcache.version>
         <dao.target.dir>src/main/java</dao.target.dir>
-        <basedir.value>${project.basedir}/src/main/</basedir.value> <!-- if this dir is wrong maybe Artifact is deployed successfully but brower found 404 -->
+        <basedir.value>${project.basedir}/src/main/
+        </basedir.value> <!-- if this dir is wrong maybe Artifact is deployed successfully but brower found 404 -->
     </properties>
 
     <dependencies>
@@ -105,6 +106,12 @@
 
         <dependency>
             <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
             <version>${spring.version}</version>
         </dependency>
@@ -145,11 +152,11 @@
             <version>${druid.version}</version>
         </dependency>
         <!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
-        <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
-            <version>${commons-dbcp.version}</version>
-        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>commons-dbcp</groupId>-->
+        <!--<artifactId>commons-dbcp</artifactId>-->
+        <!--<version>${commons-dbcp.version}</version>-->
+        <!--</dependency>-->
         <!-- JSTL标签类 -->
         <dependency>
             <groupId>jstl</groupId>
@@ -253,13 +260,12 @@
         </dependency>
         <!-- shiro end -->
 
-        <!-- freemarker-shiro-tag start -->
+        <!-- 添加 ehcache 实现 -->
         <dependency>
-            <groupId>cn.joylau.code</groupId>
-            <artifactId>joylau-shiro-freemarker</artifactId>
-            <version>${joylau-shiro-freemarker.version}</version>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>${ehcache.version}</version>
         </dependency>
-        <!-- freemarker-shiro-tag end -->
 
         <!-- 添加 shiro-ehcache 接口依赖-->
         <dependency>
@@ -268,12 +274,13 @@
             <version>${shiro.version}</version>
         </dependency>
 
-        <!-- 添加 ehcache 实现 -->
+        <!-- freemarker-shiro-tag start -->
         <dependency>
-            <groupId>net.sf.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-            <version>${ehcache.version}</version>
+            <groupId>cn.joylau.code</groupId>
+            <artifactId>joylau-shiro-freemarker</artifactId>
+            <version>${joylau-shiro-freemarker.version}</version>
         </dependency>
+        <!-- freemarker-shiro-tag end -->
     </dependencies>
 
     <distributionManagement>
@@ -295,94 +302,94 @@
         <finalName>payments</finalName>
         <plugins>
             <!--<plugin>-->
-                <!--<artifactId>maven-dependency-plugin</artifactId>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<phase>package</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>copy-dependencies</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<outputDirectory>${basedir.value}/webapp/WEB-INF/lib</outputDirectory>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
+            <!--<artifactId>maven-dependency-plugin</artifactId>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<phase>package</phase>-->
+            <!--<goals>-->
+            <!--<goal>copy-dependencies</goal>-->
+            <!--</goals>-->
+            <!--<configuration>-->
+            <!--<outputDirectory>${basedir.value}/webapp/WEB-INF/lib</outputDirectory>-->
+            <!--</configuration>-->
+            <!--</execution>-->
+            <!--</executions>-->
             <!--</plugin>-->
             <!--<plugin>-->
-                <!--<groupId>org.mybatis.generator</groupId>-->
-                <!--<artifactId>mybatis-generator-maven-plugin</artifactId>-->
-                <!--<version>1.3.5</version>-->
-                <!--<configuration>-->
-                    <!--<verbose>true</verbose>-->
-                    <!--<overwrite>true</overwrite>-->
-                <!--</configuration>-->
+            <!--<groupId>org.mybatis.generator</groupId>-->
+            <!--<artifactId>mybatis-generator-maven-plugin</artifactId>-->
+            <!--<version>1.3.5</version>-->
+            <!--<configuration>-->
+            <!--<verbose>true</verbose>-->
+            <!--<overwrite>true</overwrite>-->
+            <!--</configuration>-->
             <!--</plugin>-->
             <!--<plugin>-->
-                <!--<artifactId>maven-compiler-plugin</artifactId>-->
-                <!--<version>3.6.2</version>-->
-                <!--<configuration>-->
-                    <!--<source>1.8</source>-->
-                    <!--<target>1.8</target>-->
-                <!--</configuration>-->
+            <!--<artifactId>maven-compiler-plugin</artifactId>-->
+            <!--<version>3.6.2</version>-->
+            <!--<configuration>-->
+            <!--<source>1.8</source>-->
+            <!--<target>1.8</target>-->
+            <!--</configuration>-->
             <!--</plugin>-->
             <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-site-plugin</artifactId>-->
-                <!--<version>3.5</version>-->
-                <!--<configuration>-->
-                    <!--<reportPlugins>-->
-                        <!--<reportPlugin>-->
-                            <!--<groupId>org.apache.maven.plugins</groupId>-->
-                            <!--<artifactId>maven-project-info-reports-plugin</artifactId>-->
-                        <!--</reportPlugin>-->
-                    <!--</reportPlugins>-->
-                <!--</configuration>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-site-plugin</artifactId>-->
+            <!--<version>3.5</version>-->
+            <!--<configuration>-->
+            <!--<reportPlugins>-->
+            <!--<reportPlugin>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-project-info-reports-plugin</artifactId>-->
+            <!--</reportPlugin>-->
+            <!--</reportPlugins>-->
+            <!--</configuration>-->
             <!--</plugin>-->
             <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-war-plugin</artifactId>-->
-                <!--<version>3.1.0</version>-->
-                <!--<configuration>-->
-                    <!--<packagingExcludes>-->
-                        <!--**/spy.properties,scripts/ext4/docs/**,scripts/ext4/examples/**,scripts/ext4/pkgs/**,scripts/ext4/src/**,scripts/ext4/welcome/**,-->
-                        <!--scripts/jquery-fancybox/example/**,-->
-                        <!--scripts/zTree/demo/**,-->
-                        <!--logs/**-->
-                    <!--</packagingExcludes>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-war-plugin</artifactId>-->
+            <!--<version>3.1.0</version>-->
+            <!--<configuration>-->
+            <!--<packagingExcludes>-->
+            <!--**/spy.properties,scripts/ext4/docs/**,scripts/ext4/examples/**,scripts/ext4/pkgs/**,scripts/ext4/src/**,scripts/ext4/welcome/**,-->
+            <!--scripts/jquery-fancybox/example/**,-->
+            <!--scripts/zTree/demo/**,-->
+            <!--logs/**-->
+            <!--</packagingExcludes>-->
 
-                    <!--<warSourceExcludes>-->
-                        <!--scripts/ext4/docs/**,scripts/ext4/examples/**,scripts/ext4/pkgs/**,scripts/ext4/src/**,scripts/ext4/welcome/**,-->
-                        <!--scripts/poshytip/demo/**,-->
-                        <!--scripts/zTree/demo/**,-->
-                        <!--logs/**-->
-                    <!--</warSourceExcludes>-->
-                    <!--<warSourceDirectory>webapp</warSourceDirectory>-->
-                    <!--<workDirectory>${project.build.directory}/work</workDirectory>-->
-                    <!--<useCache>false</useCache>-->
-                    <!--<archive>-->
-                        <!--<addMavenDescriptor>true</addMavenDescriptor>-->
-                    <!--</archive>-->
-                    <!--<webXml>${basedir.value}/webapp/WEB-INF/web.xml</webXml>-->
-                    <!--<warName>${project.build.finalName}</warName>-->
-                    <!--<webResources>-->
-                        <!--<resource>-->
-                            <!--<directory>${basedir.value}/webapp/WEB-INF</directory>-->
-                            <!--<filtering>true</filtering>-->
-                            <!--<targetPath>WEB-INF</targetPath>-->
-                        <!--</resource>-->
-                    <!--</webResources>-->
-                <!--</configuration>-->
+            <!--<warSourceExcludes>-->
+            <!--scripts/ext4/docs/**,scripts/ext4/examples/**,scripts/ext4/pkgs/**,scripts/ext4/src/**,scripts/ext4/welcome/**,-->
+            <!--scripts/poshytip/demo/**,-->
+            <!--scripts/zTree/demo/**,-->
+            <!--logs/**-->
+            <!--</warSourceExcludes>-->
+            <!--<warSourceDirectory>webapp</warSourceDirectory>-->
+            <!--<workDirectory>${project.build.directory}/work</workDirectory>-->
+            <!--<useCache>false</useCache>-->
+            <!--<archive>-->
+            <!--<addMavenDescriptor>true</addMavenDescriptor>-->
+            <!--</archive>-->
+            <!--<webXml>${basedir.value}/webapp/WEB-INF/web.xml</webXml>-->
+            <!--<warName>${project.build.finalName}</warName>-->
+            <!--<webResources>-->
+            <!--<resource>-->
+            <!--<directory>${basedir.value}/webapp/WEB-INF</directory>-->
+            <!--<filtering>true</filtering>-->
+            <!--<targetPath>WEB-INF</targetPath>-->
+            <!--</resource>-->
+            <!--</webResources>-->
+            <!--</configuration>-->
             <!--</plugin>-->
 
             <!--<plugin>-->
-                <!--<groupId>org.apache.tomcat.maven</groupId>-->
-                <!--<artifactId>tomcat7-maven-plugin</artifactId>-->
-                <!--<version>2.2</version>-->
-                <!--<configuration>-->
-                    <!--<url>http://localhost:8080/manager</url>-->
-                    <!--<server>localhost</server>-->
-                    <!--<path>/${project.build.finalName}</path>-->
-                <!--</configuration>-->
+            <!--<groupId>org.apache.tomcat.maven</groupId>-->
+            <!--<artifactId>tomcat7-maven-plugin</artifactId>-->
+            <!--<version>2.2</version>-->
+            <!--<configuration>-->
+            <!--<url>http://localhost:8080/manager</url>-->
+            <!--<server>localhost</server>-->
+            <!--<path>/${project.build.finalName}</path>-->
+            <!--</configuration>-->
             <!--</plugin>-->
 
         </plugins>

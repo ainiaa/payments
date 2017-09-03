@@ -35,6 +35,7 @@ public class ResourceCheckFilter extends AccessControlFilter {
         Subject subject = getSubject(servletRequest,servletResponse);
         String url = getPathWithinApplication(servletRequest);
         logger.debug("当前用户正在访问的 url => " + url);
+        logger.info("当前用户正在访问的 url => " + url);
         return subject.isPermitted(url);
     }
 
@@ -49,6 +50,7 @@ public class ResourceCheckFilter extends AccessControlFilter {
     @Override
     protected boolean onAccessDenied(ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
         logger.debug("当 isAccessAllowed 返回 false 的时候，才会执行 method onAccessDenied ");
+        logger.info("当 isAccessAllowed 返回 false 的时候，才会执行 method onAccessDenied ");
 
         HttpServletRequest request =(HttpServletRequest) servletRequest;
         HttpServletResponse response =(HttpServletResponse) servletResponse;

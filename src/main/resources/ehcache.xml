@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ehcache name="es">
+<ehcache name="es" updateCheck="true" monitoring="autodetect" dynamicConfig="true">
+
 
     <diskStore path="java.io.tmpdir"/>
 
