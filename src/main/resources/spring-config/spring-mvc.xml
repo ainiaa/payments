@@ -56,6 +56,7 @@
         <property name="viewClass">
             <value>org.springframework.web.servlet.view.freemarker.FreeMarkerView</value>
         </property>
+        <!-- 将请求和会话属性作为变量暴露给FreeMarker模板使用。要做到这一点，可以设置exposeRequestAttributes或者exposeSessionAttributes为true -->
     </bean>
 
     <!-- 视图配置 在list中按照配置的先后顺序 -->
@@ -81,7 +82,9 @@
                 <prop key="template_exception_handler">ignore</prop>
                 <prop key="template_update_delay">5</prop><!--刷新模板的周期，单位为秒 -->
                 <prop key="default_encoding">UTF-8</prop><!--模板的编码格式 -->
+                <prop key="output_encoding">UTF-8</prop>
                 <prop key="locale">UTF-8</prop><!-- 本地化设置 -->
+                <!--<prop key="tag_syntax">auto_detect</prop>&lt;!&ndash; 设置标签类型 两种：[] 和 <> 。[] 这种标记解析要快些 &ndash;&gt;-->
                 <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
                 <prop key="time_format">HH:mm:ss</prop>
                 <prop key="boolean_format">true,false</prop>

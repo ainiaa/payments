@@ -79,14 +79,12 @@ public class MyRealm extends AuthorizingRealm {
         String password = String.valueOf(upToken.getPassword());
         logger.info("--- MyRealm doGetAuthenticationInfo password:" + password);
         logger.info("--- MyRealm doGetAuthenticationInfo else user:" + user.toString());
-        // 第 1 个参数可以传一个实体对象，然后在认证的环节可以取出 --PS todo 这个很重要 哈哈哈哈哈哈
+        // 第 1 个参数可以传一个实体对象，然后在认证的环节可以取出 --PS todo 这个很重要 它就是PrincipalCollection里面存储的内容
         // 第 2 个参数应该传递在数据库中“正确”的数据，然后和 token 中的数据进行匹配
-        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user.getUsername(), user.getPassword(), getName());//
+        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user, user.getPassword(), getName());//
         // 设置盐值
         info.setCredentialsSalt(ByteSource.Util.bytes(user.getCredentialsSalt()));
-        logger.info("--- MyRealm doGetAuthenticationInfo before setSession");
         this.setSession("currentUser", user);
-        logger.info("--- MyRealm doGetAuthenticationInfo after setSession");
         return info;
     }
 

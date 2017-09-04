@@ -48,21 +48,6 @@ public class LimitRetryHashedMatcher extends HashedCredentialsMatcher {
         return matches;
     }
 
-    @Override
-    protected Object hashProvidedCredentials(AuthenticationToken token, AuthenticationInfo info) {
-        Object salt = null;
-        if (info instanceof SaltedAuthenticationInfo) {
-            salt = ((SaltedAuthenticationInfo) info).getCredentialsSalt();
-        } else {
-            //retain 1.0 backwards compatibility:
-            if (isHashSalted()) {
-                salt = getSalt(token);
-            }
-        }
-        logger.info("LimitRetryHashedMatcher.hashProvidedCredentials getCredentials:" + token.getCredentials() + " salt:" + salt + " getHashIterations:" + getHashIterations());
-        return hashProvidedCredentials(token.getCredentials(), salt, getHashIterations());
-    }
-
     public static void main(String[] args) {
         String algorithmName = "md5";
         String password = "111111";
@@ -74,9 +59,8 @@ public class LimitRetryHashedMatcher extends HashedCredentialsMatcher {
             SimpleHash hash = new SimpleHash(algorithmName, password,
                     salt1 + salt2, hashIterations);
             String encodedPassword = hash.toHex();
-            System.out.println(s);
-            System.out.println(encodedPassword);
-            System.out.println(salt2);
+            String f = "UPDATE t_user set `salt`='%s',`password`='%s' WHERE username='%s';\r\n";
+            System.out.printf(f, salt2, encodedPassword, s);
         }
 
     }

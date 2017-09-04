@@ -8,7 +8,6 @@
     </head>
     <body>
         <div class="container">
-        <jsp:include page="inc.jsp"></jsp:include>
             <span></span>
             <div class="panel panel-info">
                 <div class="panel-heading">修改用户信息</div>
