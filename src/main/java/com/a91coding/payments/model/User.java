@@ -1,6 +1,6 @@
 package com.a91coding.payments.model;
 
-public class User extends BaseModel{
+public class User extends BaseModel {
     private static final long serialVersionUID = 1L;
     private Integer id;
 
@@ -11,6 +11,8 @@ public class User extends BaseModel{
     private String nickname;
 
     private Byte status;
+
+    private String salt;
 
     public Integer getId() {
         return id;
@@ -50,5 +52,37 @@ public class User extends BaseModel{
 
     public void setStatus(Byte status) {
         this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
+        User user = (User) o;
+
+        if (id != null ? !id.equals(user.id) : user.id != null)
+            return false;
+
+        return true;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getCredentialsSalt() {
+        return username + salt;
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
     }
 }

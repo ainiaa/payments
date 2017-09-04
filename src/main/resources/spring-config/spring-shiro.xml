@@ -17,9 +17,17 @@
     <!--<cache:annotation-driven/>-->
 
     <!-- 声明一个密码匹配器 -->
-    <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
-        <!-- 设置该密码匹配器使用的算法是 md5 -->
-        <property name="hashAlgorithmName" value="md5"/>
+    <!--<bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">-->
+        <!--&lt;!&ndash; 设置该密码匹配器使用的算法是 md5 &ndash;&gt;-->
+        <!--<property name="hashAlgorithmName" value="md5"/>-->
+    <!--</bean>-->
+    <bean id="credentialsMatcher" class="com.a91coding.payments.credentials.LimitRetryHashedMatcher">
+        <constructor-arg name="cacheManager" ref="ehCacheManager" />
+        <constructor-arg name="maxRetryTimes" value="5" />
+        <constructor-arg name="cacheKey" value="shiro-passwordRetryCache" />
+        <property name="hashAlgorithmName" value="md5" />
+        <property name="hashIterations" value="3" />
+        <property name="storedCredentialsHexEncoded" value="true" />
     </bean>
 
     <!-- 声明一个自定义的 Realm -->
