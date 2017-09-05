@@ -22,7 +22,13 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
-        return "login";
+        Subject subject = SecurityUtils.getSubject();
+        Object principal =subject.getPrincipal();
+        if (null == principal) {
+            return "login";
+        }
+        logger.info("login getPrincipal:" + principal);
+        return "redirect:/admin/user/listUser";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -60,7 +66,7 @@ public class LoginController {
 //            String path = request.getContextPath();
 //            logger.info("referer:" + referer );
 //            if (null == referer) {
-//                return "redirect:/admin/user/listUser2";
+//                return "redirect:/admin/user/listUser";
 //            } else {
 //                if (referer.startsWith(path)) {
 //                    referer = referer.replace(path, "3");
