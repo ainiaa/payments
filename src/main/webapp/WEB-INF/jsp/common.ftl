@@ -4,7 +4,7 @@
 
 <a class="btn btn-success" role="button" href="${ctx}/admin/role/list">角色管理</a>
 
-<a class="btn btn-primary" role="button" href="${ctx}/admin/user/list">用户管理</a>
+<a class="btn btn-primary" role="button" href="${ctx}/admin/user/listUser">用户管理</a>
 </div>
 <div style="float: right">
     欢迎您,【<@shiro.principal property="nickname"/>】

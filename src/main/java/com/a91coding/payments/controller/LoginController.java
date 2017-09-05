@@ -52,7 +52,7 @@ public class LoginController {
             msg = e.getMessage();
         }
         if (msg == null) {
-            return "redirect:/admin/user/list";
+            return "redirect:/admin/user/listUser";
         }
         model.addAttribute("msg", msg);
         return "login";

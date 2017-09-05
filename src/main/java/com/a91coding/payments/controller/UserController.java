@@ -5,7 +5,6 @@ import com.a91coding.payments.model.User;
 import com.a91coding.payments.service.IRoleService;
 import com.a91coding.payments.service.IUserService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.apache.shiro.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,20 +34,13 @@ public class UserController {
         int userId = Integer.parseInt(request.getParameter("id"));
         User user = this.userService.selectByPrimaryKey(userId);
         model.addAttribute("user", user);
-        return "showUser";
+        return "user/showUser";
     }
 
-    @RequestMapping("/all")
+    @RequestMapping(value = "/listUser", method = RequestMethod.GET)
     public String listUser(Model model) {
-        List<User> list = userService.listUser();
-        model.addAttribute("users", list);
-        return "listUser";
-    }
-
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String list(Model model) {
         model.addAttribute("users", userService.listUser());
-        return "user/list";
+        return "user/listUser";
     }
 
     /**
