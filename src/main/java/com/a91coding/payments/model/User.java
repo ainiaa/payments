@@ -1,5 +1,7 @@
 package com.a91coding.payments.model;
 
+import java.util.List;
+
 public class User extends BaseModel {
     private static final long serialVersionUID = 1L;
     private Integer id;
@@ -13,6 +15,8 @@ public class User extends BaseModel {
     private Byte status;
 
     private String salt;
+
+    private List hasRoleList;
 
     public Integer getId() {
         return id;
@@ -69,6 +73,13 @@ public class User extends BaseModel {
         return true;
     }
 
+    public List getHasRoleList() {
+        return hasRoleList;
+    }
+
+    public void setHasRoleList(List hasRoleList) {
+        this.hasRoleList = hasRoleList;
+    }
     public String getSalt() {
         return salt;
     }

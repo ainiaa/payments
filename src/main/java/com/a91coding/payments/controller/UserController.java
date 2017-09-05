@@ -112,7 +112,7 @@ public class UserController {
     public String update(@PathVariable("id") Integer id, Model model) {
         // 要从数据库查询对象进行回显
         User user = userService.selectByPrimaryKey(id);
-        model.addAttribute("user", user);
+
         // 所有的角色列表
         List<Role> roles = roleService.list();
         model.addAttribute("roles", roleService.list());
@@ -144,6 +144,9 @@ public class UserController {
         userStatusMap.put("0", "停用");
         userStatusMap.put("1", "启用");
         model.addAttribute("userStatusMap", userStatusMap);
+
+        user.setHasRoleList(hasRoleList);
+        model.addAttribute("user", user);
         return "user/update";
     }
 
