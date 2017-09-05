@@ -30,7 +30,7 @@ public class UserController {
     private IRoleService roleService;
 
     @RequestMapping("/showUser")
-    public String toIndex(HttpServletRequest request, Model model) {
+    public String showUser(HttpServletRequest request, Model model) {
         int userId = Integer.parseInt(request.getParameter("id"));
         User user = this.userService.selectByPrimaryKey(userId);
         model.addAttribute("user", user);
@@ -49,8 +49,8 @@ public class UserController {
      * @param model
      * @return
      */
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String add(Model model) {
+    @RequestMapping(value = "/addUser", method = RequestMethod.GET)
+    public String addUser(Model model) {
         logger.debug("跳转到添加用户的页面");
         model.addAttribute("user", new User());
         model.addAttribute("roles", roleService.list());
@@ -64,8 +64,8 @@ public class UserController {
      * @param request
      * @return
      */
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String add(User user, HttpServletRequest request) {
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
+    public String addUser(User user, HttpServletRequest request) {
         logger.debug("添加用户 post 方法");
         logger.debug(user.toString());
         List<Integer> roleIdList = new ArrayList<>();
@@ -75,12 +75,12 @@ public class UserController {
         }
         userService.insert(user, roleIdList);
         // 重定向到本 Controller 的 list 方法（Get 方式）
-        return "redirect:list";
+        return "redirect:/admin/user/listUser";
     }
 
     @ResponseBody
     @RequestMapping(value = "/updateStatus", method = RequestMethod.POST)
-    public Map<String, Object> updateStatus(User userParam) {
+    public Map<String, Object> updateUserStatus(User userParam) {
         int userId = userParam.getId();
         int u = userService.updateUserStatusByPrimaryKey(userId, userParam.getStatus());
         Map<String, Object> result = new HashMap<>();
@@ -148,7 +148,7 @@ public class UserController {
             roleIdList.add(Integer.valueOf(roleId));
         }
         userService.updateByPrimaryKey(user, roleIdList);
-        return "redirect:/admin/user/list";
+        return "redirect:/admin/user/listUser";
     }
 
     /**
