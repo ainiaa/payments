@@ -41,7 +41,6 @@
             <a class="btn btn-primary" role="button" href="#" id="deleteUserBtn" >删除用户</a>
         </div>
 
-        <%-- 不要使用自结束 --%>
         <script type="text/javascript" src="${ctx}/res/jquery-3.1.0.min.js"></script>
         <script type="text/javascript">
             $(function(){

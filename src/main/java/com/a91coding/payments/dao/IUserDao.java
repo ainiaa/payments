@@ -17,6 +17,8 @@ public interface IUserDao {
 
     int updateByPrimaryKey(User record);
 
+    int updateUserStatusByPrimaryKey(@Param(value = "userId") int userId, @Param(value = "status") Byte status);
+
     Integer batchDelete(@Param("ids") List<Integer> ids);
 
     List<User> listUser();

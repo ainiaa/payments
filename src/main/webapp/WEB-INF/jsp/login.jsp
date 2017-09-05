@@ -67,26 +67,20 @@
                         <tbody>
                             <tr>
                                 <td>admin</td>
-                                <td>123456</td>
+                                <td>111111</td>
                                 <td>超级管理员,可以执行任何操作</td>
                             </tr>
 
                             <tr>
                                 <td>dev</td>
-                                <td>123456</td>
+                                <td>111111</td>
                                 <td>开发人员,可以操作角色和资源,有用户查看权限,无删除权限</td>
                             </tr>
 
                             <tr>
                                 <td>test</td>
-                                <td>123456</td>
+                                <td>111111</td>
                                 <td>测试人员,比开发人员多了删除权限</td>
-                            </tr>
-
-                            <tr>
-                                <td>guest</td>
-                                <td>123456</td>
-                                <td>游客,只有查看权限</td>
                             </tr>
                         </tbody>
                     </table>

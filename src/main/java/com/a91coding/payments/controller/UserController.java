@@ -15,7 +15,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.sql.Array;
 import java.util.*;
 
 @Controller
@@ -89,10 +88,11 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "/updateStatus", method = RequestMethod.POST)
-    public Map<String, Object> updateStatus(User user) {
-        User u = userService.updateByPrimaryKey(user);
+    public Map<String, Object> updateStatus(User userParam) {
+        int userId = userParam.getId();
+        int u = userService.updateUserStatusByPrimaryKey(userId, userParam.getStatus());
         Map<String, Object> result = new HashMap<>();
-        if (u != null) {
+        if (u > 0) {
             result.put("success", true);
         } else {
             result.put("success", false);
@@ -119,11 +119,6 @@ public class UserController {
         Map rolesMap = new HashMap();
         roles.forEach(role->{rolesMap.put(role.getId().toString(),role.getName());});
         model.addAttribute("rolesMap", rolesMap);
-        List hasRoleList = new ArrayList();
-        hasRoleList.add("1");
-        hasRoleList.add("2");
-        hasRoleList.add("3");
-        model.addAttribute("hasRolesList", hasRoleList);
         /**
          * 根据用户 id 查询用户的所有角色
          */
@@ -131,14 +126,9 @@ public class UserController {
         /**
          * 将用户的所有角色 id 添加到一个字符串中
          */
-        List<Integer> rids = new ArrayList<>();
-        hasRoles.forEach(r -> rids.add(r.getId()));
+        List<Integer> hasRoleList = new ArrayList<>();
+        hasRoles.forEach(r -> hasRoleList.add(r.getId()));
         // 指定用户拥有的角色信息
-        rids.add(2);
-        rids.add(3);
-        String jj = StringUtils.join(rids.iterator(), ",");
-        logger.debug("jj:" + jj);
-        model.addAttribute("hasRole", rids);
 
         Map userStatusMap = new HashMap();
         userStatusMap.put("0", "停用");

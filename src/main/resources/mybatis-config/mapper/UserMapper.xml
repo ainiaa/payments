@@ -129,6 +129,12 @@
       status = #{status,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+    <update id="updateUserStatusByPrimaryKey" >
+        update t_user
+        set status = #{status,jdbcType=TINYINT}
+        where id = #{userId,jdbcType=INTEGER}
+    </update>
+
     <delete id="deleteByPrimaryKey" parameterType="int">
         DELETE FROM t_user
         where id = #{id}

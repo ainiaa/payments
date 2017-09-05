@@ -82,6 +82,10 @@ public class UserService implements IUserService {
         return user;
     }
 
+    public int updateUserStatusByPrimaryKey(int userId, Byte status) {
+        return userDao.updateUserStatusByPrimaryKey(userId, status);
+    }
+
     /**
      * 更新单个用户信息
      * @param user

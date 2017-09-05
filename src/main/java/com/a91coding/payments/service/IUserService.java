@@ -45,6 +45,8 @@ public interface IUserService {
      */
     User updateByPrimaryKey(User user);
 
+    int updateUserStatusByPrimaryKey(int userId, Byte status);
+
     /**
      * 根据主键 id 加载用户对象
      * @param id
