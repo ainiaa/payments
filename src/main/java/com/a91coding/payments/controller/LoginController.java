@@ -3,14 +3,16 @@ package com.a91coding.payments.controller;
 import com.a91coding.payments.model.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
-import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class LoginController {
@@ -24,7 +26,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(User user, Model model) {
+    public String login(User user, Model model, HttpServletRequest request) {
         String username = user.getUsername();
         String password = user.getPassword();
         logger.info("login username => " + username);
@@ -52,7 +54,18 @@ public class LoginController {
             msg = e.getMessage();
         }
         if (msg == null) {
-            return "redirect:/admin/user/listUser";
+            String referer =  WebUtils.getSavedRequest(request).getRequestUrl();
+            String path = request.getContextPath();
+            logger.info("referer:" + referer );
+            if (null == referer) {
+                return "redirect:/admin/user/listUser";
+            } else {
+                if (referer.startsWith(path)) {
+                    referer = referer.replace(path, "");
+                }
+                return "redirect:" + referer;
+            }
+
         }
         model.addAttribute("msg", msg);
         return "login";
