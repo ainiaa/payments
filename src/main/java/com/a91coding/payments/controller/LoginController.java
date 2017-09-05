@@ -53,20 +53,21 @@ public class LoginController {
             e.printStackTrace();
             msg = e.getMessage();
         }
-        if (msg == null) {
-            String referer =  WebUtils.getSavedRequest(request).getRequestUrl();
-            String path = request.getContextPath();
-            logger.info("referer:" + referer );
-            if (null == referer) {
-                return "redirect:/admin/user/listUser";
-            } else {
-                if (referer.startsWith(path)) {
-                    referer = referer.replace(path, "");
-                }
-                return "redirect:" + referer;
-            }
-
-        }
+//        登录成功之后 会在filterChainDefinitions配置的对应的filter里面自动跳转掉 如果登录成功之后需要有特殊的处理可以重新配置/login=anon 然后用下面的代码，或者重写
+//        Filter的issueSuccessRedirect方法
+//        if (msg == null) {
+//            String referer =  WebUtils.getSavedRequest(request).getRequestUrl();
+//            String path = request.getContextPath();
+//            logger.info("referer:" + referer );
+//            if (null == referer) {
+//                return "redirect:/admin/user/listUser2";
+//            } else {
+//                if (referer.startsWith(path)) {
+//                    referer = referer.replace(path, "3");
+//                }
+//                return "redirect:" + referer;
+//            }
+//        }
         model.addAttribute("msg", msg);
         return "login";
     }
