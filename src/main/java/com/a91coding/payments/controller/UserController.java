@@ -19,7 +19,7 @@ import java.util.*;
 @Controller
 @RequestMapping(value = "/admin/user")
 @RequiresPermissions("admin")
-public class UserController {
+public class UserController extends BaseBackendController{
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     @Autowired
     @Qualifier("userService")
@@ -29,18 +29,21 @@ public class UserController {
     @Qualifier("roleService")
     private IRoleService roleService;
 
-    @RequestMapping("/showUser")
+    @RequestMapping("/show")
     public String showUser(HttpServletRequest request, Model model) {
         int userId = Integer.parseInt(request.getParameter("id"));
         User user = this.userService.selectByPrimaryKey(userId);
         model.addAttribute("user", user);
-        return "user/showUser";
+        return display(model, "user/show");
     }
 
-    @RequestMapping(value = "/listUser", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String listUser(Model model) {
         model.addAttribute("users", userService.listUser());
-        return "user/listUser";
+        model.addAttribute("extJsFtl","user/listExtJs.ftl");
+        model.addAttribute("menuUrl", "/admin/user/list");
+        model.addAttribute("currUrl", "/admin/user/list");
+        return display(model, "user/list");
     }
 
     /**
@@ -49,12 +52,12 @@ public class UserController {
      * @param model
      * @return
      */
-    @RequestMapping(value = "/addUser", method = RequestMethod.GET)
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addUser(Model model) {
         logger.debug("跳转到添加用户的页面");
         model.addAttribute("user", new User());
         model.addAttribute("roles", roleService.list());
-        return "user/add";
+        return display(model, "user/add");
     }
 
     /**
@@ -64,7 +67,7 @@ public class UserController {
      * @param request
      * @return
      */
-    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addUser(User user, HttpServletRequest request) {
         logger.debug("添加用户 post 方法");
         logger.debug(user.toString());
@@ -75,7 +78,7 @@ public class UserController {
         }
         userService.insert(user, roleIdList);
         // 重定向到本 Controller 的 list 方法（Get 方式）
-        return "redirect:/admin/user/listUser";
+        return "redirect:/admin/user/list";
     }
 
     @ResponseBody
@@ -129,7 +132,7 @@ public class UserController {
 
         user.setHasRoleList(hasRoleList);
         model.addAttribute("user", user);
-        return "user/update";
+        return display(model, "user/update");
     }
 
     /**
@@ -148,7 +151,7 @@ public class UserController {
             roleIdList.add(Integer.valueOf(roleId));
         }
         userService.updateByPrimaryKey(user, roleIdList);
-        return "redirect:/admin/user/listUser";
+        return "redirect:/admin/user/list";
     }
 
     /**
@@ -162,7 +165,7 @@ public class UserController {
         User user = userService.selectByPrimaryKey(userId);
         model.addAttribute("resources", resourceList);
         model.addAttribute("user", user);
-        return "user/resources";
+        return display(model, "user/resources");
     }
 
     /**

@@ -34,7 +34,6 @@ public class ResourceCheckFilter extends AccessControlFilter {
     protected boolean isAccessAllowed(ServletRequest servletRequest, ServletResponse servletResponse, Object o) throws Exception {
         Subject subject = getSubject(servletRequest,servletResponse);
         String url = getPathWithinApplication(servletRequest);
-        logger.debug("当前用户正在访问的 url => " + url);
         logger.info("当前用户正在访问的 url => " + url);
         return subject.isPermitted(url);
     }

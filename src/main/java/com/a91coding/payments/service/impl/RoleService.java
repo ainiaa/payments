@@ -12,9 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by Liwei on 2016/9/18.
- */
 @Service("roleService")
 public class RoleService implements IRoleService {
     @Autowired
@@ -32,9 +29,9 @@ public class RoleService implements IRoleService {
 
     @Transactional
     @Override
-    public void deleteRoleAndResource(List<Integer> ids) {
+    public Integer deleteRoleAndResource(List<Integer> ids) {
         roleDao.batchDelete(ids);
-        roleDao.batchDeleteRoleResource(ids);
+        return roleDao.batchDeleteRoleResource(ids);
     }
 
     @Override
@@ -63,18 +60,18 @@ public class RoleService implements IRoleService {
     }
 
     @Override
-    public void addUserRole(int uid, int roleId) {
-        roleDao.addUserRole(uid, roleId);
+    public Integer addUserRole(int uid, int roleId) {
+        return roleDao.addUserRole(uid, roleId);
     }
 
     @Override
-    public void deleteUserRole(int uid, int roleId) {
-        roleDao.deleteUserRole(uid, roleId);
+    public Integer deleteUserRole(int uid, int roleId) {
+        return roleDao.deleteUserRole(uid, roleId);
     }
 
     @Override
-    public void deleteUserRoles(int uid) {
-        roleDao.deleteUserRoles(uid);
+    public Integer deleteUserRoles(int uid) {
+        return roleDao.deleteUserRoles(uid);
     }
 
     @Override
@@ -83,13 +80,13 @@ public class RoleService implements IRoleService {
     }
 
     @Override
-    public void addRoleResource(int roleId, int resId) {
-        roleDao.addRoleResource(roleId, resId);
+    public Integer addRoleResource(int roleId, int resId) {
+        return roleDao.addRoleResource(roleId, resId);
     }
 
     @Override
-    public void deleteRoleResource(int roleId, int resId) {
-        roleDao.deleteRoleResource(roleId, resId);
+    public Integer deleteRoleResource(int roleId, int resId) {
+        return roleDao.deleteRoleResource(roleId, resId);
     }
 
     @Override

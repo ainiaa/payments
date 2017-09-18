@@ -29,7 +29,7 @@ public interface IRoleService {
      * @param ids
      * @return
      */
-    void deleteRoleAndResource(List<Integer> ids);
+    Integer deleteRoleAndResource(List<Integer> ids);
 
     /**
      * 根据 id 加载角色对象
@@ -69,20 +69,20 @@ public interface IRoleService {
      * @param uid
      * @param roleId
      */
-    void addUserRole(int uid, int roleId);
+    Integer addUserRole(int uid, int roleId);
 
     /**
      * 根据用户 id 和角色 id 删除一条用户角色关系数据
      * @param uid
      * @param roleId
      */
-    void deleteUserRole(int uid, int roleId);
+    Integer deleteUserRole(int uid, int roleId);
 
     /**
      * 删除某个用户的所有角色
      * @param uid
      */
-    void deleteUserRoles(int uid);
+    Integer deleteUserRoles(int uid);
     /**
      * 根据角色id获取可以访问的所有资源
      * @param roleId
@@ -95,14 +95,14 @@ public interface IRoleService {
      * @param roleId
      * @param resId
      */
-    void addRoleResource(int roleId, int resId);
+    Integer addRoleResource(int roleId, int resId);
 
     /**
      * 根据角色 id 和权限 id 删除一条用户权限关联数据
      * @param roleId
      * @param resId
      */
-    void deleteRoleResource(int roleId, int resId);
+    Integer deleteRoleResource(int roleId, int resId);
 
     /**
      * 根据角色 id 和权限 id 查询一条用户权限关联数据

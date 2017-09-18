@@ -16,7 +16,7 @@
         <spring.version>4.3.10.RELEASE</spring.version>
         <!-- mybatis版本号 -->
         <mybatis.version>3.4.5</mybatis.version>
-        <mybatis-pring.version>1.3.1</mybatis-pring.version>
+        <mybatis-spring.version>1.3.1</mybatis-spring.version>
         <!-- log4j日志文件管理包版本 -->
         <slf4j.version>1.7.25</slf4j.version>
         <log4j.version>2.8.2</log4j.version>
@@ -44,7 +44,7 @@
         <commons-lang3.version>3.6</commons-lang3.version>
         <dao.target.dir>src/main/java</dao.target.dir>
         <basedir.value>${project.basedir}/src/main/
-        </basedir.value> <!-- if this dir is wrong maybe Artifact is deployed successfully but brower found 404 -->
+        </basedir.value> <!-- if this dir is wrong maybe Artifact is deployed successfully but browser found 404 -->
     </properties>
 
     <dependencies>
@@ -144,7 +144,7 @@
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
-            <version>${mybatis-pring.version}</version>
+            <version>${mybatis-spring.version}</version>
         </dependency>
         <!-- 导入java ee jar 包 -->
         <dependency>
@@ -295,20 +295,19 @@
         <!-- freemarker-shiro-tag end -->
     </dependencies>
 
-    <distributionManagement>
-        <repository>
-            <id>user-release</id>
-            <name>root</name>
-            <url>http://localhost:8080/nexus/content/repositories/user-release/</url>
-        </repository>
+    <!--<distributionManagement>-->
+        <!--<repository>-->
+            <!--<id>user-release</id>-->
+            <!--<name>root</name>-->
+            <!--<url>http://localhost:8080/nexus/content/repositories/user-release/</url>-->
+        <!--</repository>-->
 
-        <snapshotRepository>
-            <id>user-snapshot</id>
-            <name>root</name>
-            <url>http://localhost:8080/nexus/content/repositories/user-snapshot/</url>
-        </snapshotRepository>
-
-    </distributionManagement>
+        <!--<snapshotRepository>-->
+            <!--<id>user-snapshot</id>-->
+            <!--<name>root</name>-->
+            <!--<url>http://localhost:8080/nexus/content/repositories/user-snapshot/</url>-->
+        <!--</snapshotRepository>-->
+    <!--</distributionManagement>-->
 
     <build>
         <finalName>payments</finalName>
@@ -327,15 +326,15 @@
             <!--</execution>-->
             <!--</executions>-->
             <!--</plugin>-->
-            <!--<plugin>-->
-            <!--<groupId>org.mybatis.generator</groupId>-->
-            <!--<artifactId>mybatis-generator-maven-plugin</artifactId>-->
-            <!--<version>1.3.5</version>-->
-            <!--<configuration>-->
-            <!--<verbose>true</verbose>-->
-            <!--<overwrite>true</overwrite>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.5</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
             <!--<plugin>-->
             <!--<artifactId>maven-compiler-plugin</artifactId>-->
             <!--<version>3.6.2</version>-->
